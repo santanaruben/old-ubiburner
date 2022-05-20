@@ -12,7 +12,7 @@ import Welcome from "./components/Others/Welcome";
 import Address from "./components/Balances/Address";
 import UBI from "./components/Balances/UBI";
 import ETH from "./components/Balances/ETH";
-import Tokens from "./components/Balances/Tokens";
+// import Tokens from "./components/Balances/Tokens";
 import NoETH from "./components/Balances/NoETH";
 import Contributors from "./components/Leaderboards/Contributors";
 import Burners from "./components/Leaderboards/Burners";
@@ -208,7 +208,7 @@ function App() {
   const [burnersEvent, setBurnersEvent] = useState([]);
   const [contributors, setContributors] = useState();
   const [burners, setBurners] = useState();
-  const [tokens, setTokens] = useState();
+  // const [tokens, setTokens] = useState();
 
   async function getContributors() {
     let eventFilter = contractUBIburner.filters.Received();
@@ -227,19 +227,19 @@ function App() {
     setBurnersEvent(events);
   }
 
-  async function getTokens() {
-    // let allTokens = {};
-    //añadir tokens
-    //fetch(`https://raw.githubusercontent.com/santanaruben/ubiburner/main/public/json/tokens.json`)
-    fetch(`https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/tokenlist.json`)
-    .then(res => res.json())
-    .then(tokens => {
-      console.log(tokens)
-      setTokens(tokens)
-    })
-    .catch(err => console.log(err));
-    // setTokens(allTokens);
-  }
+  // async function getTokens() {
+  //   // let allTokens = {};
+  //   //añadir tokens
+  //   //fetch(`https://raw.githubusercontent.com/santanaruben/ubiburner/main/public/json/tokens.json`)
+  //   fetch(`https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/tokenlist.json`)
+  //   .then(res => res.json())
+  //   .then(tokens => {
+  //     console.log(tokens)
+  //     setTokens(tokens)
+  //   })
+  //   .catch(err => console.log(err));
+  //   // setTokens(allTokens);
+  // }
 
   useEffect(() => {
     if (!provider) return;
