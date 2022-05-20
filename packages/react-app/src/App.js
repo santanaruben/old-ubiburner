@@ -335,7 +335,7 @@ function App() {
     async function start() {
       await getContributors();
       await getBurners();
-      await getTokens();
+      // await getTokens();
     }
     start();
     setEntryEv(true);
